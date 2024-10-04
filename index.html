@@ -1,116 +1,127 @@
 <!DOCTYPE html>
-<html lang="en" data-theme = "light">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RJ Tect BD</title>
     <!-- All CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
+  </head>
+  <body>
     <!-- header section start -->
     <header>
-        <!-- navber section  -->
-        <div class="navbar w-11/12 mx-auto bg-base-100">
-            <div class="navbar-start">
-              <div class="dropdown">
-                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M4 6h16M4 12h8m-8 6h16" />
-                  </svg>
-                </div>
-                <ul
-                  tabindex="0"
-                  class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                  <li><a>About</a></li>
-                  <li><a>Blog</a></li>
-                  <li><a>Contact</a></li>
-                </ul>
-              </div>
-              <a class="btn btn-ghost text-xl">RJ TECH BD</a>
+      <!-- navber section  -->
+      <div class="navbar w-11/12 mx-auto bg-base-100">
+        <div class="navbar-start">
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
             </div>
-            <div class="navbar-center hidden lg:flex">
-              <ul class="menu menu-horizontal px-1">
-                <li><a>About</a></li>
-                <li><a>Blog</a></li>
-                <li><a>Contact</a></li>
-              </ul>
-            </div>
-            <div class="navbar-end">
-              <a class="btn">Log In</a>
-            </div>
+            <ul
+              tabindex="0"
+              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            >
+              <li><a>About</a></li>
+              <li><a>Blog</a></li>
+              <li><a>Contact</a></li>
+            </ul>
           </div>
+          <a class="btn btn-primary text-xl">RJ TECH BD</a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal px-1">
+            <li><a>About</a></li>
+            <li><a>Blog</a></li>
+            <li><a>Contact</a></li>
+          </ul>
+        </div>
+        <div class="navbar-end">
+          <a class="btn btn-active btn-accent">Log In</a>
+        </div>
+      </div>
     </header>
     <!-- header section close -->
     <!-- main section start -->
     <main>
-        <!-- search ber section start -->
-        <div class="flex items-center justify-center gap-4 my-10">
-            <label class="input input-bordered flex items-center gap-2">
-                <input type="text" class="grow" placeholder="Search product" />
-                <kbd class="kbd kbd-sm">⌘</kbd>
-                <kbd class="kbd kbd-sm">K</kbd>
-            </label>
-            <button class="btn-error btn">Search</button>
-        </div>
-        <!-- search ber section close -->
+      <!-- search ber section start -->
+      <div class="flex items-center justify-center gap-4 my-10">
+        <label class="input input-bordered flex items-center gap-2">
+          <input type="search" class="grow" placeholder="Search product" />
+          <kbd class="kbd kbd-sm">⌘</kbd>
+          <kbd class="kbd kbd-sm">K</kbd>
+        </label>
+        <button class="btn btn-secondary">Search</button>
+      </div>
+      <!-- search ber section close -->
     </main>
     <!-- main section close -->
     <!-- footer section start -->
     <footer>
-        <footer class="w-11/12 mx-auto footer bg-neutral text-neutral-content grid-rows-2 p-10">
-            <nav>
-              <h6 class="footer-title">Services</h6>
-              <a class="link link-hover">Branding</a>
-              <a class="link link-hover">Design</a>
-              <a class="link link-hover">Marketing</a>
-              <a class="link link-hover">Advertisement</a>
-            </nav>
-            <nav>
-              <h6 class="footer-title">Company</h6>
-              <a class="link link-hover">About us</a>
-              <a class="link link-hover">Contact</a>
-              <a class="link link-hover">Jobs</a>
-              <a class="link link-hover">Press kit</a>
-            </nav>
-            <nav>
-              <h6 class="footer-title">Legal</h6>
-              <a class="link link-hover">Terms of use</a>
-              <a class="link link-hover">Privacy policy</a>
-              <a class="link link-hover">Cookie policy</a>
-            </nav>
-            <nav>
-              <h6 class="footer-title">Social</h6>
-              <a class="link link-hover">Twitter</a>
-              <a class="link link-hover">Instagram</a>
-              <a class="link link-hover">Facebook</a>
-              <a class="link link-hover">Github</a>
-            </nav>
-            <nav>
-              <h6 class="footer-title">Explore</h6>
-              <a class="link link-hover">Features</a>
-              <a class="link link-hover">Enterprise</a>
-              <a class="link link-hover">Security</a>
-              <a class="link link-hover">Pricing</a>
-            </nav>
-            <nav>
-              <h6 class="footer-title">Apps</h6>
-              <a class="link link-hover">Mac</a>
-              <a class="link link-hover">Windows</a>
-              <a class="link link-hover">iPhone</a>
-              <a class="link link-hover">Android</a>
-            </nav>
-          </footer>
+      <footer
+        class="w-11/12 mx-auto footer bg-neutral text-neutral-content grid-rows-2 p-10"
+      >
+        <nav>
+          <h6 class="footer-title">Services</h6>
+          <a class="link link-hover">Branding</a>
+          <a class="link link-hover">Design</a>
+          <a class="link link-hover">Marketing</a>
+          <a class="link link-hover">Advertisement</a>
+        </nav>
+        <nav>
+          <h6 class="footer-title">Company</h6>
+          <a class="link link-hover">About us</a>
+          <a class="link link-hover">Contact</a>
+          <a class="link link-hover">Jobs</a>
+          <a class="link link-hover">Press kit</a>
+        </nav>
+        <nav>
+          <h6 class="footer-title">Legal</h6>
+          <a class="link link-hover">Terms of use</a>
+          <a class="link link-hover">Privacy policy</a>
+          <a class="link link-hover">Cookie policy</a>
+        </nav>
+        <nav>
+          <h6 class="footer-title">Social</h6>
+          <a class="link link-hover">Twitter</a>
+          <a class="link link-hover">Instagram</a>
+          <a class="link link-hover">Facebook</a>
+          <a class="link link-hover">Github</a>
+        </nav>
+        <nav>
+          <h6 class="footer-title">Explore</h6>
+          <a class="link link-hover">Features</a>
+          <a class="link link-hover">Enterprise</a>
+          <a class="link link-hover">Security</a>
+          <a class="link link-hover">Pricing</a>
+        </nav>
+        <nav>
+          <h6 class="footer-title">Apps</h6>
+          <a class="link link-hover">Mac</a>
+          <a class="link link-hover">Windows</a>
+          <a class="link link-hover">iPhone</a>
+          <a class="link link-hover">Android</a>
+        </nav>
+      </footer>
     </footer>
     <!-- footer section close -->
+    <script src="./script/phone.js"></script>
+  </body>
 </html>
