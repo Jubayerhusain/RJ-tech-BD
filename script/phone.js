@@ -81,14 +81,19 @@ const displayPhoneDetails = (details) => {
     modalContainer.innerHTML = `
     <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
     <div class="modal-box">
+        <div>
         <img src=${details.image} />
-        <h3 class="text-lg font-bold">${details.brand}</h3>
-        <h3 class="text-lg font-bold">${details.name}</h3>
-        <h3 class="text-lg font-bold">${details.slug}</h3>
-        <p class="py-4">Press ESC key or click the button below to close</p>
+        </div>
+        <h3 class="text-lg font-bold">Brand Name: ${details.brand}</h3>
+        <h3 class="text-lg font-bold">Phone Name: ${details.name}</h3>
+        <h3 class="text-lg font-bold">phone ID: ${details.slug}</h3>
+        <h3 class="text-md font-normal">ReleaseDate: ${details.releaseDate}</h3>
+        <h3 class="text-md font-normal">Storage: ${details.mainFeatures.storage}</h3>
+        <h3 class="text-md font-normal">DisplaySize: ${details.mainFeatures.displaySize}</h3>
+        <h3 class="text-md font-normal">ChipSet: ${details.mainFeatures.chipSet}</h3>
+        <h3 class="text-md font-normal">Memory: ${details.mainFeatures.memory}</h3>
         <div class="modal-action">
         <form method="dialog">
-            <!-- if there is a button in form, it will close the modal -->
             <button class="btn">Close</button>
         </form>
         </div>
