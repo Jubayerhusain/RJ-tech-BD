@@ -21,6 +21,9 @@ const loadAllPhone = async (status, searchInput) => {
 
     }
 }
+const showAllPhoneBtn = () => {
+    loadAllPhone(true)
+}
 
 // brand:"Apple "
 // image:"https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-13-mini.jpg"
@@ -35,7 +38,12 @@ const displayAllPhone = (allphoine) => {
     document.getElementById('phone-Container').innerHTML = "";
     allphoine.forEach((phone) => {
         // obejct destracturing
-        const { brand,image,phone_name,slug } = phone;
+        const {
+            brand,
+            image,
+            phone_name,
+            slug
+        } = phone;
         console.log(phone)
         const createPhoneCard = document.createElement('div');
         createPhoneCard.innerHTML = `
@@ -51,7 +59,7 @@ const displayAllPhone = (allphoine) => {
                 <p>${phone_name}</p>
                 <p>${slug}</p>
                 <div class="card-actions">
-                <button class="btn btn-primary">Phone Details</button>
+                <button onclick="phoneDetails('${slug}')" class="btn btn-primary">Phone Details</button>
                 </div>
             </div>
         </div>
@@ -60,10 +68,55 @@ const displayAllPhone = (allphoine) => {
     });
 }
 
-const showAllPhoneBtn = () => {
-    loadAllPhone(true)
+const phoneDetails = async (id) => {
+    console.log('phone detains btn click')
+    const respons = await fetch(`https://openapi.programming-hero.com/api/phone/${id}`);
+    const data = await respons.json();
+    displayPhoneDetails(data.data);
+    my_modal_5.showModal();
 }
-
+const displayPhoneDetails = (details) => {
+    console.log(details)
+    const modalContainer = document.getElementById('modal-container');
+    modalContainer.innerHTML = `
+    <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+    <div class="modal-box">
+        <img src=${details.image} />
+        <h3 class="text-lg font-bold">${details.brand}</h3>
+        <h3 class="text-lg font-bold">${details.name}</h3>
+        <h3 class="text-lg font-bold">${details.slug}</h3>
+        <p class="py-4">Press ESC key or click the button below to close</p>
+        <div class="modal-action">
+        <form method="dialog">
+            <!-- if there is a button in form, it will close the modal -->
+            <button class="btn">Close</button>
+        </form>
+        </div>
+    </div>
+    </dialog>
+    `
+}
+// {
+//     "mainFeatures": {
+//         "storage": "128GB/256GB/512GB storage, no card slot",
+//         "displaySize": "5.4 inches, 71.9 cm2 (~85.1% screen-to-body ratio)",
+//         "chipSet": "Apple A15 Bionic (5 nm)",
+//         "memory": "128GB 4GB RAM, 256GB 4GB RAM, 512GB 4GB RAM",
+//         "sensors": [
+//             "Face ID",
+//             "accelerometer",
+//             "gyro",
+//             "proximity",
+//             "compass",
+//             "barometer"
+//         ]
+//     },
+//     "slug": "apple_iphone_13_mini-11104",
+//     "name": "iPhone 13 mini",
+//     "releaseDate": "Released 2021, September 24",
+//     "brand": "Apple",
+//     "image": "https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-13-mini.jpg"
+// }
 
 // globaly call function 
 loadAllPhone(false, "iphone")
