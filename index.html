@@ -12,24 +12,20 @@
     />
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-      /* Loader Container */
       .loader {
         display: flex;
         justify-content: space-around;
         align-items: center;
         width: 100px;
       }
-
-      /* Individual Circles */
       .circle {
         width: 20px;
         height: 20px;
-        background-color: #f510a9e0; /* সার্কেলের রঙ */
-        border-radius: 50%; /* বৃত্তাকার তৈরি করতে */
-        animation: bounce 0.6s infinite alternate; /* Bounce Animation */
+        background-color: #f510a9e0;
+        border-radius: 50%;
+        animation: bounce 0.6s infinite alternate; 
       }
 
-      /* চারটি আলাদা সার্কেলের জন্য ভিন্ন ভিন্ন ডিলে */
       .circle:nth-child(1) {
         animation-delay: 0s;
       }
@@ -43,13 +39,13 @@
         animation-delay: 0.6s;
       }
 
-      /* Bounce Animation Effect */
+      /* Animation Effect */
       @keyframes bounce {
         from {
           transform: translateY(0);
         }
         to {
-          transform: translateY(-20px); /* সার্কেলগুলি উপর-নীচে উঠবে */
+          transform: translateY(-20px); 
         }
       }
     </style>
