@@ -103,11 +103,18 @@
       <!-- search ber section start -->
       <div class="flex items-center justify-center gap-4 my-10">
         <label class="input input-bordered flex items-center gap-2">
-          <input id="search-field" type="text" class="grow" placeholder="Search product" />
+          <input
+            id="search-field"
+            type="text"
+            class="grow"
+            placeholder="Search product"
+          />
           <kbd class="kbd kbd-sm">⌘</kbd>
           <kbd class="kbd kbd-sm">K</kbd>
         </label>
-        <button onclick="searchHandler()" class="btn btn-secondary">Search</button>
+        <button onclick="searchHandler()" class="btn btn-secondary">
+          Search
+        </button>
       </div>
       <!-- search ber section close -->
       <!-- loader  container start-->
@@ -118,12 +125,24 @@
         <div class="circle"></div>
       </div>
       <!-- loader  container close-->
-       <!-- show all btn section start  -->
-       <div class="text-center">
-        <button onclick="showAllPhoneBtn()" class="btn btn-active btn-accent  my-5">Show All</button>
-       </div>
-       <!-- show all btn section start  -->
-
+      <!-- phone-Container start  -->
+      <div>
+        <div
+          id="phone-Container"
+          class="w-11/12 mx-auto gap-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
+        ></div>
+      </div>
+      <!-- phone-Container close  -->
+      <!-- show all btn section start  -->
+      <div class="text-center">
+        <button
+          onclick="showAllPhoneBtn()"
+          class="btn btn-active btn-accent my-5"
+        >
+          Show All
+        </button>
+      </div>
+      <!-- show all btn section start  -->
     </main>
     <!-- main section close -->
     <!-- footer section start -->

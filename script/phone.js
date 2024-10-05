@@ -22,10 +22,42 @@ const loadAllPhone = async (status, searchInput) => {
     }
 }
 
+// brand:"Apple "
+// image:"https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-13-mini.jpg"
+// phone_name:"iPhone 13 mini"
+// slug:"apple_iphone_13_mini-11104"
+
 
 const displayAllPhone = (allphoine) => {
     console.log('Display All phone Called')
     // console.log(allphoine)
+    const phoneContainer = document.getElementById('phone-Container');
+    document.getElementById('phone-Container').innerHTML = "";
+    allphoine.forEach((phone) => {
+        // obejct destracturing
+        const { brand,image,phone_name,slug } = phone;
+        console.log(phone)
+        const createPhoneCard = document.createElement('div');
+        createPhoneCard.innerHTML = `
+        <div class="card h-[480px] bg-base-100 shadow-xl">
+            <figure class="px-10 pt-10">
+                <img
+                src=${image}
+                alt="phone-image"
+                class="rounded-xl" />
+            </figure>
+            <div class="card-body items-center text-center">
+                <h2 class="card-title">${brand}</h2>
+                <p>${phone_name}</p>
+                <p>${slug}</p>
+                <div class="card-actions">
+                <button class="btn btn-primary">Phone Details</button>
+                </div>
+            </div>
+        </div>
+        `;
+        phoneContainer.append(createPhoneCard);
+    });
 }
 
 const showAllPhoneBtn = () => {
