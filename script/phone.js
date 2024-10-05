@@ -1,24 +1,25 @@
+let brand = "iphone"
 const searchHandler = () => {
     const loadSpinner = document.getElementById('spinner');
     loadSpinner.classList.remove('hidden')
     // console.log("Search Btn Cliked");
     const searchField = document.getElementById('search-field').value;
+    brand = searchField;
     setTimeout(() => {
         loadAllPhone(false, searchField);
     }, 3000);
 }
 const loadAllPhone = async (status, searchInput) => {
-    console.log(searchInput);
+    // console.log(searchInput);
     const loadSpinner = document.getElementById('spinner');
     loadSpinner.classList.add('hidden')
 
-    const respons = await fetch(`https://openapi.programming-hero.com/api/phones?search=${searchInput?searchInput:"iphone"}`);
+    const respons = await fetch(`https://openapi.programming-hero.com/api/phones?search=${searchInput?searchInput:brand}`);
     const data = await respons.json();
     if (status == true) {
         displayAllPhone(data.data);
     } else {
         displayAllPhone(data.data.slice(0, 6));
-
     }
 }
 const showAllPhoneBtn = () => {
@@ -32,11 +33,18 @@ const showAllPhoneBtn = () => {
 
 
 const displayAllPhone = (allphoine) => {
-    console.log('Display All phone Called')
+    // console.log('Display All phone Called')
     // console.log(allphoine)
+    if(allphoine.length === 0){
+        console.log("falsy value")
+        const noContent = document.getElementById('no-content');
+        noContent.classList.remove('hidden');
+    }
     const phoneContainer = document.getElementById('phone-Container');
     document.getElementById('phone-Container').innerHTML = "";
     allphoine.forEach((phone) => {
+        
+
         // obejct destracturing
         const {
             brand,
@@ -44,7 +52,7 @@ const displayAllPhone = (allphoine) => {
             phone_name,
             slug
         } = phone;
-        console.log(phone)
+        // console.log(phone)
         const createPhoneCard = document.createElement('div');
         createPhoneCard.innerHTML = `
         <div class="card h-[480px] bg-base-100 shadow-xl">
@@ -69,14 +77,14 @@ const displayAllPhone = (allphoine) => {
 }
 
 const phoneDetails = async (id) => {
-    console.log('phone detains btn click')
+    // console.log('phone detains btn click')
     const respons = await fetch(`https://openapi.programming-hero.com/api/phone/${id}`);
     const data = await respons.json();
     displayPhoneDetails(data.data);
     my_modal_5.showModal();
 }
 const displayPhoneDetails = (details) => {
-    console.log(details)
+    // console.log(details)
     const modalContainer = document.getElementById('modal-container');
     modalContainer.innerHTML = `
     <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
