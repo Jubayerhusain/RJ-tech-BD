@@ -11,6 +11,48 @@
       type="text/css"
     />
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Loader Container */
+      .loader {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100px;
+      }
+
+      /* Individual Circles */
+      .circle {
+        width: 20px;
+        height: 20px;
+        background-color: #f510a9e0; /* সার্কেলের রঙ */
+        border-radius: 50%; /* বৃত্তাকার তৈরি করতে */
+        animation: bounce 0.6s infinite alternate; /* Bounce Animation */
+      }
+
+      /* চারটি আলাদা সার্কেলের জন্য ভিন্ন ভিন্ন ডিলে */
+      .circle:nth-child(1) {
+        animation-delay: 0s;
+      }
+      .circle:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .circle:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+      .circle:nth-child(4) {
+        animation-delay: 0.6s;
+      }
+
+      /* Bounce Animation Effect */
+      @keyframes bounce {
+        from {
+          transform: translateY(0);
+        }
+        to {
+          transform: translateY(-20px); /* সার্কেলগুলি উপর-নীচে উঠবে */
+        }
+      }
+    </style>
   </head>
   <body>
     <!-- header section start -->
@@ -58,6 +100,7 @@
         </div>
       </div>
     </header>
+
     <!-- header section close -->
     <!-- main section start -->
     <main>
@@ -71,6 +114,14 @@
         <button class="btn btn-secondary">Search</button>
       </div>
       <!-- search ber section close -->
+      <!-- loader  container start-->
+      <div class="loader my-10 mx-auto">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+      </div>
+      <!-- loader  container close-->
     </main>
     <!-- main section close -->
     <!-- footer section start -->
